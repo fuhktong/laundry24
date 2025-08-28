@@ -1,0 +1,71 @@
+.footer-contact-section {
+  display: flex; /* Enable flexbox */
+  flex-direction: row; /* Set direction to row */
+  justify-content: space-between; /* Space out the items evenly */
+  height: auto;
+  padding: 90px 20px 120px 20px;
+  gap: 10px; /* Space between items */
+  border-top: 10px solid white;
+  border-bottom: 10px solid white;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: #444;
+}
+
+@media (max-width: 900px) {
+  .footer-contact-section {
+    display: flex;
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    gap: 50px; /* Adjust gap for vertical layout */
+    justify-content: center;
+    align-items: center;
+    padding: 15%;
+  }
+}
+
+.text-contact-info {
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 20px;
+  padding: 50px;
+  flex: 1; /* Each child will take equal space */
+  display: flex; /* Enable flexbox for child divs */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  box-sizing: border-box; /* Include padding and border in width */
+  text-align: center; /* Center align text */
+  border-radius: 30px;
+  width: 2rem;
+  font-size: 1.5vw;
+}
+
+@media (max-width: 900px) {
+  .text-contact-info {
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    padding: 20%;
+  }
+}
+
+.footer-contact-section h1 {
+  margin-bottom: 10px;
+}
+
+.footer-contact-section p {
+  font-size: 16px;
+  margin-bottom: 5px;
+  padding: 0;
+}
+
+.footer-contact-section a {
+  color: #444;
+  /* text-shadow: 2px 2px 2px rgb(255, 255, 255); */
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-contact-section a:hover {
+  /* text-shadow: 3px 3px 3px rgba(159, 204, 210, 1); */
+  text-decoration: underline;
+}

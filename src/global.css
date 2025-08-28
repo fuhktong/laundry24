@@ -1,0 +1,52 @@
+:root {
+  background-image: url(/public/bubbles7.png);
+}
+
+body {
+  margin: 0;
+  /* font-family: "Short Stack", "Gills Sans", sans-serif; */
+  font-family: Verdana;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* .color-palette 
+Darkest: #3f9aa6
+Dark: #6fb3bc
+Medium: #9fccd2
+Light: #bfdddf
+Lightest: #dfeded
+*/
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 0; /* Add padding to prevent overflow */
+  margin: 0;
+  overflow-wrap: break-word; /* Allow long words to break */
+  word-wrap: break-word; /* For older browsers */
+  overflow: hidden; /* Prevent overflow */
+  box-sizing: border-box; /* Ensure padding is included in width */
+  color: #444;
+  text-shadow: 2px 2px 2px rgb(255, 255, 255);
+}
+
+.text-section-layer {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Fixed spacing and correct property name */
+  margin: 20px 10px; /* Removed comma, added semicolon */
+  padding: 50px;
+  max-width: 80%; /* Removed comma, added semicolon */
+  box-sizing: border-box; /* Corrected property name */
+  overflow: auto; /* Added semicolon */
+  border: none; /* Added semicolon */
+  border-radius: 30px; /* Fixed property name */
+}
