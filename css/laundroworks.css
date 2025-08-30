@@ -1,0 +1,190 @@
+/* LaundroWorks specific styling based on about.css structure */
+.laundroworks-text-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 50px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.laundroworks-text-section-layer {
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 20px;
+  padding: 50px;
+  border-radius: 30px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+  color: #444;
+}
+
+.laundroworks-text-section-layer h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+  color: #2c3e50;
+}
+
+.laundroworks-text-section-layer h2 {
+  margin-top: 20px;
+}
+
+.laundroworks-text-section-layer p {
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 0;
+  width: 80%;
+  font-size: 16px;
+}
+
+.laundroworks-feature-section {
+  margin-bottom: 25px;
+  padding: 20px;
+  width: 90%;
+}
+
+.laundroworks-feature-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.laundroworks-feature-section li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.laundroworks-feature-section li:before {
+  content: "•";
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  top: -3px;
+}
+
+.laundroworks-closing {
+  text-align: center;
+  font-style: italic;
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 900px) {
+  .laundroworks-text-section {
+    padding: 15px;
+  }
+
+  .laundroworks-text-section-layer {
+    margin: 10px;
+    width: 95%;
+    padding: 20px;
+  }
+
+  .laundroworks-feature-section {
+    width: 100%;
+  }
+
+  .laundroworks-text-section-layer p {
+    width: 100%;
+  }
+}
+
+/* Link styling */
+.laundroworks-text-section-layer a {
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.laundroworks-text-section-layer a:hover {
+  text-decoration: underline;
+}
+
+.laundroworks-img img {
+  height: 500px;
+  width: auto;
+}
+
+.laundroworks-pic {
+  background-image: url("/public/laundry24slide4.png");
+}
+
+.laundroworks-mainpic-section {
+  height: 500px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 10px solid white;
+  border-top: 10px solid white;
+}
+
+.laundroworks-mainpic-section-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: var(--text-dropshadow);
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.laundroworks-mainpic-section-text h2 {
+  color: white;
+  font-family: "Permanent Marker";
+  font-size: 40px;
+  text-shadow: 1px 1px 1px black;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 90%;
+}
+
+.laundroworks-mainpic-section-text h1 {
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  width: 90%;
+}
+
+.laundroworks-mainpic-section-text button {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+  background-color: #9fccd2;
+  border: 4px solid white;
+  color: white;
+  width: 180px;
+  padding: 15px 32px;
+  text-shadow: var(--text-dropshadow);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition-duration: 0.15s;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.laundroworks-mainpic-section-text button:hover {
+  background-color: #6fccd8;
+}

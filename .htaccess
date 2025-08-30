@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# Redirect old React routes to new PHP structure
+RewriteRule ^about/?$ index.php?page=about [L]
+RewriteRule ^services/?$ index.php?page=services [L]
+RewriteRule ^laundroworks/?$ index.php?page=laundroworks [L]
+RewriteRule ^contact/?$ index.php?page=contact [L]
+
+# Handle index page
+RewriteRule ^$ index.php [L]
+
+# Prevent access to includes and pages directories
+RewriteRule ^includes/ - [F,L]
+RewriteRule ^pages/ - [F,L]
