@@ -1,5 +1,4 @@
-/* LaundroWorks specific styling based on about.css structure */
-.laundroworks-text-section {
+.about-grid-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,12 +9,13 @@
   overflow: hidden;
 }
 
-.laundroworks-text-section-layer {
+/* Style for the intro block (full width) */
+.about-section-block-intro {
   background-color: rgba(255, 255, 255, 0.7);
   margin: 20px;
   padding: 50px;
   border-radius: 30px;
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,102 +23,100 @@
   box-sizing: border-box;
   text-align: center;
   color: #444;
+  height: 400px;
+  overflow-y: auto;
 }
 
-.laundroworks-text-section-layer h1 {
-  text-align: center;
-  margin-bottom: 20px;
+/* Container for the 2x2 grid layout */
+.about-grid-blocks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
   width: 100%;
-  color: #2c3e50;
+  margin-top: 50px;
 }
 
-.laundroworks-text-section-layer h2 {
-  margin-top: 20px;
-}
-
-.laundroworks-text-section-layer p {
+/* Style for the grid blocks */
+.about-section-block {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 30px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
   text-align: center;
-  margin-bottom: 15px;
+  color: #444;
+  height: 400px;
+  overflow-y: auto;
+}
+
+.about-section-block-intro h1,
+.about-section-block h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.about-section-block-intro p {
+  text-align: center;
+  margin-bottom: 5px;
   padding: 0;
   width: 80%;
   font-size: 16px;
 }
 
-.laundroworks-feature-section {
-  margin-bottom: 25px;
-  padding: 20px;
-  width: 90%;
-}
-
-.laundroworks-feature-section ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.laundroworks-feature-section li {
-  position: relative;
-  padding-left: 25px;
-  margin-bottom: 12px;
-  text-align: left;
-}
-
-.laundroworks-feature-section li:before {
-  content: "•";
-  font-size: 20px;
-  position: absolute;
-  left: 0;
-  top: -3px;
-}
-
-.laundroworks-closing {
+.about-section-block p {
   text-align: center;
-  font-style: italic;
-  margin-top: 30px;
-  font-size: 18px;
+  margin-bottom: 5px;
+  padding: 0;
+  width: 100%;
+  font-size: 16px;
 }
 
-/* Media query for responsiveness */
 @media (max-width: 900px) {
-  .laundroworks-text-section {
-    padding: 15px;
+  .about-grid-container {
+    padding: 15%;
   }
 
-  .laundroworks-text-section-layer {
-    margin: 10px;
-    width: 95%;
+  .about-section-block-intro {
+    margin: 0;
+    width: 100%;
+    justify-content: center;
     padding: 20px;
   }
 
-  .laundroworks-feature-section {
-    width: 100%;
+  .about-grid-blocks {
+    grid-template-columns: 1fr;
   }
 
-  .laundroworks-text-section-layer p {
+  .about-section-block {
+    margin: 0;
     width: 100%;
+    justify-content: center;
+    padding: 20px;
   }
 }
 
-/* Link styling */
-.laundroworks-text-section-layer a {
+/* Add these styles to match the footer-contact link styling */
+.about-section-block-intro a,
+.about-section-block a {
   color: #444;
   text-decoration: none;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.laundroworks-text-section-layer a:hover {
+.about-section-block-intro a:hover,
+.about-section-block a:hover {
   text-decoration: underline;
 }
 
-.laundroworks-img img {
-  height: 500px;
-  width: auto;
+.about-mainpic {
+  background-image: url("/images/laundry24slide2.png");
 }
 
-.laundroworks-pic {
-  background-image: url("/public/laundry24slide4.png");
-}
-
-.laundroworks-mainpic-section {
+.about-mainpic-section {
   height: 500px;
   background-size: cover;
   display: flex;
@@ -129,7 +127,7 @@
   border-top: 10px solid white;
 }
 
-.laundroworks-mainpic-section-text {
+.about-mainpic-section-text {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -140,7 +138,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.laundroworks-mainpic-section-text h2 {
+.about-mainpic-section-text h2 {
   color: white;
   font-family: "Permanent Marker";
   font-size: 40px;
@@ -152,7 +150,7 @@
   width: 90%;
 }
 
-.laundroworks-mainpic-section-text h1 {
+.about-mainpic-section-text h1 {
   color: white;
   text-shadow: 1px 1px 1px black;
   padding-bottom: 20px;
@@ -164,7 +162,7 @@
   width: 90%;
 }
 
-.laundroworks-mainpic-section-text button {
+.about-mainpic-section-text button {
   display: flex;
   justify-content: center;
   padding-bottom: 20px;
@@ -185,6 +183,6 @@
   font-weight: 600;
 }
 
-.laundroworks-mainpic-section-text button:hover {
+.about-mainpic-section-text button:hover {
   background-color: #6fccd8;
 }

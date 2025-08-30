@@ -42,4 +42,4 @@
     </div>
 </div>
 
-<?php include 'includes/footer-contact.php'; ?>
+<?php include 'footer/footer-contact.php'; ?>

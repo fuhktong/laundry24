@@ -8,9 +8,10 @@
   align-items: center;
   border-bottom: 10px solid white;
   border-top: 10px solid white;
+  background-color: white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .carousel {
     width: 100%;
     height: auto;

@@ -16,7 +16,7 @@ switch($page) {
         break;
     case 'contact':
         $title = 'Contact - Laundry 24 Orlando';
-        $content = 'pages/contact.php';
+        $content = 'contact/contact.php';
         break;
     default:
         $title = 'Advance Coin Laundry - Orlando, Florida Laundrymat';
@@ -39,27 +39,42 @@ switch($page) {
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="images/favicon.ico" />
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/footer-contact.css" />
-    <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="css/about.css" />
-    <link rel="stylesheet" href="css/services.css" />
-    <link rel="stylesheet" href="css/contact.css" />
-    <link rel="stylesheet" href="css/carousel.css" />
-    <link rel="stylesheet" href="css/laundroworks.css" />
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="header/header.css" />
+    <link rel="stylesheet" href="footer/footer.css" />
+    <link rel="stylesheet" href="footer/footer-contact.css" />
+    <?php
+    // Load page-specific CSS
+    switch($page) {
+        case 'about':
+            echo '<link rel="stylesheet" href="pages/about.css" />';
+            break;
+        case 'services':
+            echo '<link rel="stylesheet" href="pages/services.css" />';
+            break;
+        case 'laundroworks':
+            echo '<link rel="stylesheet" href="pages/laundroworks.css" />';
+            break;
+        case 'contact':
+            echo '<link rel="stylesheet" href="contact/contact.css" />';
+            break;
+        default:
+            echo '<link rel="stylesheet" href="pages/home.css" />';
+            echo '<link rel="stylesheet" href="carousel/carousel.css" />';
+            break;
+    }
+    ?>
 </head>
 <body>
     <div class="App">
-        <?php include 'includes/header.php'; ?>
+        <?php include 'header/header.php'; ?>
         <main>
             <?php include $content; ?>
         </main>
-        <?php include 'includes/footer.php'; ?>
+        <?php include 'footer/footer.php'; ?>
     </div>
-    <script src="js/carousel.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/contact-form.js"></script>
+    <script src="carousel/carousel.js"></script>
+    <script src="header/navbar.js"></script>
+    <script src="contact/contact-form.js"></script>
 </body>
 </html>

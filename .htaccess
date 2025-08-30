@@ -9,6 +9,8 @@ RewriteRule ^contact/?$ index.php?page=contact [L]
 # Handle index page
 RewriteRule ^$ index.php [L]
 
-# Prevent access to includes and pages directories
+# Allow CSS files in pages directory but block PHP files
+RewriteRule ^pages/.*\.css$ - [L]
+RewriteRule ^pages/.*\.php$ - [F,L]
+# Prevent access to includes directory
 RewriteRule ^includes/ - [F,L]
-RewriteRule ^pages/ - [F,L]

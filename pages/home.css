@@ -90,7 +90,7 @@
 }
 
 .home-homepic {
-  background-image: url("/public/laundry24slide1.png");
+  background-image: url("/images/laundry24slide1.png");
 }
 
 .laundroworks-text-section {
@@ -117,7 +117,7 @@
     255,
     0.7
   ); /* Fixed spacing and correct property name */
-  margin: 20px 10px; /* Removed comma, added semicolon */
+  margin: 100px 10px; /* Removed comma, added semicolon */
   padding: 50px;
   max-width: 80%; /* Removed comma, added semicolon */
   box-sizing: border-box; /* Corrected property name */

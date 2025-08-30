@@ -1,5 +1,5 @@
-/* LaundroWorks specific styling based on about.css structure */
-.laundroworks-text-section {
+/* services specific styling based on about.css structure */
+.services-text-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +10,7 @@
   overflow: hidden;
 }
 
-.laundroworks-text-section-layer {
+.services-text-section-layer {
   background-color: rgba(255, 255, 255, 0.7);
   margin: 20px;
   padding: 50px;
@@ -25,18 +25,18 @@
   color: #444;
 }
 
-.laundroworks-text-section-layer h1 {
+.services-text-section-layer h1 {
   text-align: center;
   margin-bottom: 20px;
   width: 100%;
   color: #2c3e50;
 }
 
-.laundroworks-text-section-layer h2 {
+.services-text-section-layer h2 {
   margin-top: 20px;
 }
 
-.laundroworks-text-section-layer p {
+.services-text-section-layer p {
   text-align: center;
   margin-bottom: 15px;
   padding: 0;
@@ -44,25 +44,25 @@
   font-size: 16px;
 }
 
-.laundroworks-feature-section {
+.services-feature-section {
   margin-bottom: 25px;
   padding: 20px;
   width: 90%;
 }
 
-.laundroworks-feature-section ul {
+.services-feature-section ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-.laundroworks-feature-section li {
+.services-feature-section li {
   position: relative;
   padding-left: 25px;
   margin-bottom: 12px;
   text-align: left;
 }
 
-.laundroworks-feature-section li:before {
+.services-feature-section li:before {
   content: "•";
   font-size: 20px;
   position: absolute;
@@ -70,7 +70,7 @@
   top: -3px;
 }
 
-.laundroworks-closing {
+.services-closing {
   text-align: center;
   font-style: italic;
   margin-top: 30px;
@@ -79,46 +79,42 @@
 
 /* Media query for responsiveness */
 @media (max-width: 900px) {
-  .laundroworks-text-section {
+  .services-text-section {
     padding: 15px;
   }
 
-  .laundroworks-text-section-layer {
+  .services-text-section-layer {
     margin: 10px;
     width: 95%;
     padding: 20px;
   }
 
-  .laundroworks-feature-section {
+  .services-feature-section {
     width: 100%;
   }
 
-  .laundroworks-text-section-layer p {
+  .services-text-section-layer p {
     width: 100%;
   }
 }
 
 /* Link styling */
-.laundroworks-text-section-layer a {
+.services-text-section-layer a {
   color: #444;
   text-decoration: none;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.laundroworks-text-section-layer a:hover {
+.services-text-section-layer a:hover {
   text-decoration: underline;
 }
 
-.laundroworks-img img {
+.services-img img {
   height: 500px;
   width: auto;
 }
 
-.laundroworks-pic {
-  background-image: url("/public/laundry24slide4.png");
-}
-
-.laundroworks-mainpic-section {
+.services-mainpic-section {
   height: 500px;
   background-size: cover;
   display: flex;
@@ -129,7 +125,7 @@
   border-top: 10px solid white;
 }
 
-.laundroworks-mainpic-section-text {
+.services-mainpic-section-text {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -140,7 +136,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.laundroworks-mainpic-section-text h2 {
+.services-mainpic-section-text h2 {
   color: white;
   font-family: "Permanent Marker";
   font-size: 40px;
@@ -152,7 +148,7 @@
   width: 90%;
 }
 
-.laundroworks-mainpic-section-text h1 {
+.services-mainpic-section-text h1 {
   color: white;
   text-shadow: 1px 1px 1px black;
   padding-bottom: 20px;
@@ -164,7 +160,7 @@
   width: 90%;
 }
 
-.laundroworks-mainpic-section-text button {
+.services-mainpic-section-text button {
   display: flex;
   justify-content: center;
   padding-bottom: 20px;
@@ -185,6 +181,32 @@
   font-weight: 600;
 }
 
-.laundroworks-mainpic-section-text button:hover {
+.services-mainpic-section-text button:hover {
   background-color: #6fccd8;
+}
+
+.services-button {
+  background-color: #9fccd2;
+  border: 4px solid white;
+  color: white;
+  width: 180px;
+  padding: 15px 32px;
+  text-shadow: var(--text-dropshadow);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition-duration: 0.15s;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.services-button:hover {
+  background-color: #6fccd8;
+}
+
+.services-main-pic {
+  background-image: url("/images/laundry24slide3.png");
 }
