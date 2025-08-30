@@ -28,4 +28,6 @@ jobs:
             **/node_modules/**
             .github/
             package*.json
+            build/
             deploycode.txt
+            README.md
