@@ -52,6 +52,16 @@ function loadEnvFile() {
 
 loadEnvFile();
 
+// Debug info for development
+if ($_SERVER['HTTP_HOST'] === 'localhost:8888' || $_SERVER['HTTP_HOST'] === 'localhost:8889') {
+    error_log("Debug - SMTP Password set: " . (!empty($_ENV['SMTP_PASSWORD']) ? 'Yes' : 'No'));
+    error_log("Debug - Env files checked: " . json_encode([
+        '../.env exists' => file_exists('../.env'),
+        '.env exists' => file_exists('.env'),
+        '__DIR__/.env exists' => file_exists(__DIR__ . '/.env')
+    ]));
+}
+
 $mail = new PHPMailer(true);
 
 try {
@@ -77,7 +87,24 @@ try {
     $mail->send();
     echo json_encode(['status' => 'success', 'message' => 'Thank you for your message. We will get back to you soon!']);
 } catch (Exception $e) {
-    error_log("Mailer Error: {$mail->ErrorInfo}");
-    echo json_encode(['status' => 'error', 'message' => 'Failed to send message. Please try again later.']);
+    // Detailed error logging
+    $errorDetails = [
+        'Exception message' => $e->getMessage(),
+        'PHPMailer ErrorInfo' => $mail->ErrorInfo,
+        'SMTP Host' => $mail->Host,
+        'SMTP Port' => $mail->Port,
+        'Username' => $mail->Username,
+        'Password set' => !empty($_ENV['SMTP_PASSWORD']) ? 'Yes' : 'No',
+        'Env file loaded' => file_exists('../.env') || file_exists('.env') ? 'Yes' : 'No'
+    ];
+    
+    error_log("Contact Form Error: " . json_encode($errorDetails));
+    
+    // In development, show detailed error
+    if ($_SERVER['HTTP_HOST'] === 'localhost:8888' || $_SERVER['HTTP_HOST'] === 'localhost:8889') {
+        echo json_encode(['status' => 'error', 'message' => 'Debug: ' . $e->getMessage()]);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Failed to send message. Please try again later.']);
+    }
 }
 ?>
