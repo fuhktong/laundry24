@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         try {
-            const response = await fetch('http://advancecoinlaundry.com/contactform.php', {
+            const response = await fetch('contactform.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
