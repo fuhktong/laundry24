@@ -67,7 +67,7 @@ $mail = new PHPMailer(true);
 try {
     // Server settings - Using Hostinger SMTP
     $mail->isSMTP();
-    $mail->Host       = 'smtp.hostinger.com';
+    $mail->Host       = 'smtp.laundry24orlando.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'info@laundry24orlando.com';  // You'll need to create this email in Hostinger
     $mail->Password   = $_ENV['SMTP_PASSWORD'] ?? getenv('SMTP_PASSWORD');    
@@ -102,7 +102,15 @@ try {
     
     // In development, show detailed error
     if ($_SERVER['HTTP_HOST'] === 'localhost:8888' || $_SERVER['HTTP_HOST'] === 'localhost:8889') {
-        echo json_encode(['status' => 'error', 'message' => 'Debug: ' . $e->getMessage()]);
+        $debugInfo = [
+            'Error' => $e->getMessage(),
+            'PHPMailer Error' => $mail->ErrorInfo,
+            'Password Set' => !empty($_ENV['SMTP_PASSWORD']) ? 'Yes' : 'No',
+            'Env File Found' => file_exists('../.env') || file_exists('.env') ? 'Yes' : 'No',
+            'SMTP Host' => $mail->Host,
+            'Username' => $mail->Username
+        ];
+        echo json_encode(['status' => 'error', 'message' => 'Debug Info: ' . json_encode($debugInfo)]);
     } else {
         echo json_encode(['status' => 'error', 'message' => 'Failed to send message. Please try again later.']);
     }
