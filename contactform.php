@@ -71,8 +71,8 @@ try {
     $mail->SMTPAuth   = true;
     $mail->Username   = 'info@laundry24orlando.com';  // You'll need to create this email in Hostinger
     $mail->Password   = $_ENV['SMTP_PASSWORD'] ?? getenv('SMTP_PASSWORD');    
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port       = 587;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port       = 465;
 
     // Recipients
     $mail->setFrom($email, $name);
