@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             const result = await response.json();
+            console.log('Server response:', result);
             
             responseDiv.style.display = 'block';
             responseDiv.className = result.success ? 'success' : 'error';
@@ -34,5 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             responseDiv.className = 'error';
             responseDiv.textContent = 'An error occurred while sending your message.';
         }
+        
+        console.log('Form submission completed');
     });
 });
