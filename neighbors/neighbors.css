@@ -1,0 +1,51 @@
+.neighbors-banner {
+  background-color: var(--background-color);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.neighbors-title {
+  font-family: "Permanent Marker";
+  font-size: 2em;
+  color: white;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.neighbors-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.neighbor-item {
+  flex: 1;
+  max-width: 300px;
+  min-width: 200px;
+}
+
+.neighbor-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.neighbor-item img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .neighbors-images {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .neighbors-title {
+    font-size: 1.5em;
+  }
+}

@@ -61,6 +61,7 @@ switch($page) {
         default:
             echo '<link rel="stylesheet" href="pages/home.css" />';
             echo '<link rel="stylesheet" href="carousel/carousel.css" />';
+            echo '<link rel="stylesheet" href="neighbors/neighbors.css" />';
             break;
     }
     ?>

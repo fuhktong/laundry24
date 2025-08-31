@@ -37,11 +37,14 @@
             are always available to assist with anything you need—just ask!
         </p>
     </div>
+    <?php include 'neighbors/neighbors.php'; ?>
+
 </div>
 
 <div id="carousel-container">
     <!-- Carousel will be inserted here by JavaScript -->
 </div>
+
 
 <div class="laundroworks-text-section home-laundroworks">
     <div class="laundroworks-text-section-layer">
