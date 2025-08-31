@@ -23,8 +23,11 @@ function sendSMTPEmail($to, $subject, $message) {
         $mail->send();
         return true;
     } catch (Exception $e) {
-        error_log("Email error: " . $e->getMessage());
-        return false;
+        error_log("PHPMailer error: " . $e->getMessage());
+        error_log("SMTP Host: " . $_ENV['SMTP_HOST']);
+        error_log("SMTP Port: " . $_ENV['SMTP_PORT']);
+        error_log("SMTP Username: " . $_ENV['SMTP_USERNAME']);
+        throw $e; // Re-throw to get detailed error in contact_handler
     }
 }
 ?>

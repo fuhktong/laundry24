@@ -68,11 +68,25 @@ $message = "Name: " . $data['name'] . "\n";
 $message .= "Email: " . $data['email'] . "\n\n";
 $message .= "Message:\n" . $data['message'];
 
-// Send email
-if (sendSMTPEmail($to, $subject, $message)) {
-    echo json_encode(['success' => true, 'message' => 'Message sent successfully']);
-} else {
+// Debug: Check if environment variables are loaded
+if (empty($_ENV['SMTP_HOST']) || empty($_ENV['SMTP_USERNAME']) || empty($_ENV['CONTACT_EMAIL'])) {
+    error_log("Missing environment variables");
     http_response_code(500);
-    echo json_encode(['error' => 'Failed to send email']);
+    echo json_encode(['error' => 'SMTP configuration missing']);
+    exit;
+}
+
+// Send email
+try {
+    if (sendSMTPEmail($to, $subject, $message)) {
+        echo json_encode(['success' => true, 'message' => 'Message sent successfully']);
+    } else {
+        http_response_code(500);
+        echo json_encode(['error' => 'Failed to send email']);
+    }
+} catch (Exception $e) {
+    error_log("Contact handler error: " . $e->getMessage());
+    http_response_code(500);
+    echo json_encode(['error' => 'Server error: ' . $e->getMessage()]);
 }
 ?>
