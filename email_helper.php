@@ -16,8 +16,19 @@ function sendSMTPEmail($to, $subject, $message) {
         $mail->Port = $_ENV['SMTP_PORT'];
 
         $mail->setFrom($_ENV['SMTP_USERNAME'], 'Laundry 24 Orlando Contact');
-        $mail->addAddress($to);
+        // Add multiple recipients if $to is an array
+        if (is_array($to)) {
+            foreach ($to as $email) {
+                $mail->addAddress($email);
+            }
+        } else {
+            $mail->addAddress($to);
+        }
         $mail->addReplyTo($_ENV['SMTP_USERNAME'], 'Laundry 24 Orlando');
+        
+        // Add headers to improve deliverability
+        $mail->addCustomHeader('X-Mailer', 'Laundry24Orlando Contact Form');
+        $mail->addCustomHeader('List-Unsubscribe', '<mailto:' . $_ENV['SMTP_USERNAME'] . '?subject=unsubscribe>');
         
         $mail->Subject = $subject;
         $mail->Body = $message;

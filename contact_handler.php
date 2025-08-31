@@ -70,8 +70,9 @@ if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-// Prepare email
-$to = $_ENV['CONTACT_EMAIL'];
+// Prepare email - support multiple recipients
+$recipients = explode(',', $_ENV['CONTACT_EMAIL']);
+$to = array_map('trim', $recipients);
 $subject = 'Contact Form: Laundry 24 Orlando';
 $message = "Name: " . $data['name'] . "\n";
 $message .= "Email: " . $data['email'] . "\n\n";
