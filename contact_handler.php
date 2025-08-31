@@ -24,7 +24,17 @@ function loadEnvFile() {
     return false;
 }
 
-loadEnvFile();
+// Enable error reporting for debugging
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+if (!loadEnvFile()) {
+    error_log("Failed to load .env file");
+    http_response_code(500);
+    echo json_encode(['error' => 'Configuration error']);
+    exit;
+}
 
 header('Content-Type: application/json');
 
