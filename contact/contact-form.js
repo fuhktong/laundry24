@@ -8,28 +8,24 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
 
         const formData = new FormData(contactForm);
-        const data = new URLSearchParams();
-        
-        for (let [key, value] of formData.entries()) {
-            data.append(key, value);
-        }
+        const data = Object.fromEntries(formData);
 
         try {
-            const response = await fetch('./contactform.php', {
+            const response = await fetch('contact_handler.php', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Content-Type': 'application/json',
                 },
-                body: data.toString()
+                body: JSON.stringify(data)
             });
 
             const result = await response.json();
             
             responseDiv.style.display = 'block';
-            responseDiv.className = result.status === 'success' ? 'success' : 'error';
-            responseDiv.textContent = result.message;
+            responseDiv.className = result.success ? 'success' : 'error';
+            responseDiv.textContent = result.success ? result.message : result.error;
 
-            if (result.status === 'success') {
+            if (result.success) {
                 contactForm.reset();
             }
         } catch (error) {
