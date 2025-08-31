@@ -75,6 +75,5 @@ switch($page) {
     </div>
     <script src="carousel/carousel.js"></script>
     <script src="header/navbar.js"></script>
-    <script src="contact/contact-form.js"></script>
 </body>
 </html>

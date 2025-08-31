@@ -35,7 +35,7 @@ function sendSMTPEmail($to, $subject, $message) {
         $mail->isHTML(false);
 
         $mail->send();
-        error_log("Email sent successfully to: " . $to);
+        error_log("Email sent successfully to: " . (is_array($to) ? implode(', ', $to) : $to));
         return true;
     } catch (Exception $e) {
         error_log("PHPMailer error: " . $e->getMessage());
