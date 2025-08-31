@@ -56,6 +56,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $input = file_get_contents('php://input');
 $data = json_decode($input, true);
 
+// Log each request with timestamp
+error_log("=== CONTACT FORM REQUEST START ===");
+error_log("Timestamp: " . date('Y-m-d H:i:s'));
+error_log("Request method: " . $_SERVER['REQUEST_METHOD']);
+error_log("Raw input: " . $input);
+error_log("Decoded data: " . print_r($data, true));
+
 // Basic validation
 if (empty($data['name']) || empty($data['email']) || empty($data['message'])) {
     http_response_code(400);
@@ -87,10 +94,13 @@ if (empty($_ENV['SMTP_HOST']) || empty($_ENV['SMTP_USERNAME']) || empty($_ENV['C
 }
 
 // Send email
+error_log("About to send email to: " . print_r($to, true));
 try {
     if (sendSMTPEmail($to, $subject, $message)) {
+        error_log("=== EMAIL SENT SUCCESSFULLY ===");
         echo json_encode(['success' => true, 'message' => 'Message sent successfully']);
     } else {
+        error_log("=== EMAIL SEND FAILED ===");
         http_response_code(500);
         echo json_encode(['error' => 'Failed to send email']);
     }
@@ -99,4 +109,5 @@ try {
     http_response_code(500);
     echo json_encode(['error' => 'Server error: ' . $e->getMessage()]);
 }
+error_log("=== CONTACT FORM REQUEST END ===");
 ?>
