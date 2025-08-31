@@ -56,14 +56,19 @@ function loadEnvFile() {
 
 loadEnvFile();
 
-// Debug info for development
-if ($_SERVER['HTTP_HOST'] === 'localhost:8888' || $_SERVER['HTTP_HOST'] === 'localhost:8889') {
-    error_log("Debug - SMTP Password set: " . (!empty($_ENV['SMTP_PASSWORD']) ? 'Yes' : 'No'));
-    error_log("Debug - Env files checked: " . json_encode([
-        '../.env exists' => file_exists('../.env'),
-        '.env exists' => file_exists('.env'),
-        '__DIR__/.env exists' => file_exists(__DIR__ . '/.env')
-    ]));
+// Debug info - always show for troubleshooting
+error_log("Debug - SMTP Password set: " . (!empty($_ENV['SMTP_PASSWORD']) ? 'Yes' : 'No'));
+error_log("Debug - Current directory: " . getcwd());
+error_log("Debug - Env files checked: " . json_encode([
+    '../.env exists' => file_exists('../.env'),
+    '.env exists' => file_exists('.env'),
+    '__DIR__/.env exists' => file_exists(__DIR__ . '/.env')
+]));
+
+// Also temporarily return this info for debugging
+if (empty($_ENV['SMTP_PASSWORD'])) {
+    echo json_encode(['error' => 'SMTP password not loaded from .env file']);
+    exit;
 }
 
 $mail = new PHPMailer(true);
@@ -73,7 +78,7 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.hostinger.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'info@laundry24orlando.com';  // You'll need to create this email in Hostinger
+    $mail->Username   = 'info@laundry24orlando.com';
     $mail->Password   = $_ENV['SMTP_PASSWORD'] ?? getenv('SMTP_PASSWORD');    
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
