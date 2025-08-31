@@ -11,14 +11,16 @@ if (file_exists('vendor/autoload.php')) {
     try {
         require_once 'vendor/autoload.php';
         echo "PHPMailer autoload: Success<br>";
-        
-        use PHPMailer\PHPMailer\PHPMailer;
-        $mail = new PHPMailer();
-        echo "PHPMailer instance: Success<br>";
     } catch (Exception $e) {
-        echo "PHPMailer error: " . $e->getMessage() . "<br>";
+        echo "PHPMailer autoload error: " . $e->getMessage() . "<br>";
     }
 } else {
     echo "Vendor autoload not found<br>";
+}
+
+if (class_exists('PHPMailer\PHPMailer\PHPMailer')) {
+    echo "PHPMailer class available: Yes<br>";
+} else {
+    echo "PHPMailer class available: No<br>";
 }
 ?>
