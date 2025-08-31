@@ -12,13 +12,17 @@ header('Access-Control-Allow-Headers: Content-Type');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
-    echo json_encode(['status' => 'error', 'message' => 'Method not allowed']);
+    echo json_encode(['error' => 'Method not allowed']);
     exit;
 }
 
-$name = trim($_POST['name'] ?? '');
-$email = trim($_POST['email'] ?? '');
-$message = trim($_POST['message'] ?? '');
+// Handle JSON input
+$input = file_get_contents('php://input');
+$data = json_decode($input, true);
+
+$name = trim($data['name'] ?? '');
+$email = trim($data['email'] ?? '');
+$message = trim($data['message'] ?? '');
 
 if (empty($name) || empty($email) || empty($message)) {
     echo json_encode(['status' => 'error', 'message' => 'All fields are required']);
@@ -85,7 +89,7 @@ try {
     $mail->Body    = "Name: $name\nEmail: $email\nMessage: $message";
 
     $mail->send();
-    echo json_encode(['status' => 'success', 'message' => 'Thank you for your message. We will get back to you soon!']);
+    echo json_encode(['success' => true, 'message' => 'Thank you for your message. We will get back to you soon!']);
 } catch (Exception $e) {
     // Detailed error logging
     $errorDetails = [
