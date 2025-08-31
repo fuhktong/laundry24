@@ -42,4 +42,5 @@
     </div>
 </div>
 
+<script src="contact/contact-form.js"></script>
 <?php include 'footer/footer-contact.php'; ?>

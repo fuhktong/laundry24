@@ -12,7 +12,7 @@ function sendSMTPEmail($to, $subject, $message) {
         $mail->SMTPAuth = true;
         $mail->Username = $_ENV['SMTP_USERNAME'];
         $mail->Password = $_ENV['SMTP_PASSWORD'];
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port = $_ENV['SMTP_PORT'];
 
         $mail->setFrom($_ENV['SMTP_USERNAME'], 'Contact Form');
