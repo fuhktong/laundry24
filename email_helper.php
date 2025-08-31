@@ -15,12 +15,16 @@ function sendSMTPEmail($to, $subject, $message) {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port = $_ENV['SMTP_PORT'];
 
-        $mail->setFrom($_ENV['SMTP_USERNAME'], 'Contact Form');
+        $mail->setFrom($_ENV['SMTP_USERNAME'], 'Laundry 24 Orlando Contact');
         $mail->addAddress($to);
+        $mail->addReplyTo($_ENV['SMTP_USERNAME'], 'Laundry 24 Orlando');
+        
         $mail->Subject = $subject;
         $mail->Body = $message;
+        $mail->isHTML(false);
 
         $mail->send();
+        error_log("Email sent successfully to: " . $to);
         return true;
     } catch (Exception $e) {
         error_log("PHPMailer error: " . $e->getMessage());
