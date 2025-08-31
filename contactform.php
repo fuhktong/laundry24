@@ -91,8 +91,8 @@ try {
     };
 
     // Recipients
-    $mail->setFrom($email, $name);
-    $mail->addAddress('advancecoin47@gmail.com', 'Laundry 24 Orlando');
+    $mail->setFrom($_ENV['SMTP_USERNAME'], 'Laundry 24 Orlando');
+    $mail->addAddress($_ENV['CONTACT_EMAIL'], 'Laundry 24 Orlando');
     $mail->addReplyTo($email, $name);
 
     // Content
