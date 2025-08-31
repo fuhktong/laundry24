@@ -92,3 +92,16 @@ textarea {
   font-weight: bold;
   padding-top: 20px;
 }
+
+.map-link {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.map-link a {
+  font-family: "Permanent Marker";
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
