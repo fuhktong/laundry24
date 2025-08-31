@@ -75,8 +75,8 @@ try {
     $mail->SMTPAuth   = true;
     $mail->Username   = 'info@laundry24orlando.com';  // You'll need to create this email in Hostinger
     $mail->Password   = $_ENV['SMTP_PASSWORD'] ?? getenv('SMTP_PASSWORD');    
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port       = 465;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = 587;
 
     // Recipients
     $mail->setFrom($email, $name);
@@ -116,7 +116,7 @@ try {
         ];
         echo json_encode(['status' => 'error', 'message' => 'Debug Info: ' . json_encode($debugInfo)]);
     } else {
-        echo json_encode(['error' => 'Failed to send message. Please try again later.']);
+        echo json_encode(['error' => 'SMTP Error: ' . $e->getMessage()]);
     }
 }
 ?>
