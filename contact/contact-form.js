@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const data = Object.fromEntries(formData);
 
         try {
-            const response = await fetch('contact_handler.php', {
+            const response = await fetch('test_handler.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
