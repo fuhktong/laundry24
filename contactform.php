@@ -83,6 +83,12 @@ try {
     $mail->Password   = $_ENV['SMTP_PASSWORD'];
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = $_ENV['SMTP_PORT'];
+    
+    // Enable SMTP debugging
+    $mail->SMTPDebug = 2;
+    $mail->Debugoutput = function($str, $level) {
+        error_log("SMTP Debug: $str");
+    };
 
     // Recipients
     $mail->setFrom($email, $name);
