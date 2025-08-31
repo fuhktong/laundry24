@@ -25,12 +25,12 @@ $email = trim($data['email'] ?? '');
 $message = trim($data['message'] ?? '');
 
 if (empty($name) || empty($email) || empty($message)) {
-    echo json_encode(['status' => 'error', 'message' => 'All fields are required']);
+    echo json_encode(['error' => 'All fields are required']);
     exit;
 }
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo json_encode(['status' => 'error', 'message' => 'Invalid email address']);
+    echo json_encode(['error' => 'Invalid email address']);
     exit;
 }
 
@@ -116,7 +116,7 @@ try {
         ];
         echo json_encode(['status' => 'error', 'message' => 'Debug Info: ' . json_encode($debugInfo)]);
     } else {
-        echo json_encode(['status' => 'error', 'message' => 'Failed to send message. Please try again later.']);
+        echo json_encode(['error' => 'Failed to send message. Please try again later.']);
     }
 }
 ?>
