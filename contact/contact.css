@@ -15,9 +15,9 @@
 form {
   display: inline-block;
   padding: 1em;
-  border: 5px solid #9fccd2;
+  border: 3px solid white;
   border-radius: 1em;
-  background-color: #9fccd2;
+  background-color: rgba(159, 204, 210, 0.5);
   width: 50%;
   max-width: 400px;
   -webkit-filter: drop-shadow(5px 5px 5px #222);
@@ -40,6 +40,8 @@ label {
   text-align: right;
   padding-bottom: 5px;
   color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
 
 input,
@@ -70,6 +72,17 @@ textarea {
   text-shadow: 1px 1px 1px rgb(116, 116, 116);
 }
 
+.button button {
+  background: none;
+  border: none;
+  font-family: "Permanent Marker";
+  font-size: 1.8em;
+  color: white;
+  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 10px;
+}
+
 .contactform-send-message {
   color: white;
   text-decoration: none;
@@ -93,15 +106,23 @@ textarea {
   padding-top: 20px;
 }
 
+.map-container {
+  margin: 0;
+}
+
 .map-link {
   text-align: center;
-  margin: 20px 0;
+  margin: 40px 0 20px 0;
 }
 
 .map-link a {
   font-family: "Permanent Marker";
   color: white;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1.4em;
   text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+.static-map {
+  margin-bottom: 50px;
 }
