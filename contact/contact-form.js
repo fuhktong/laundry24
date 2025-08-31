@@ -3,8 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const responseMessage = document.getElementById('response-message');
 
     if (contactForm) {
+        let isSubmitting = false;
+        
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            if (isSubmitting) return;
 
             const formData = new FormData(this);
             const data = {
@@ -14,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             // Show loading state
+            isSubmitting = true;
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
             submitButton.textContent = 'Sending...';
@@ -41,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 responseMessage.innerHTML = '<div style="color: red;">Network error. Please try again.</div>';
             })
             .finally(() => {
+                isSubmitting = false;
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
             });
