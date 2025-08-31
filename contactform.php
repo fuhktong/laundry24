@@ -71,14 +71,6 @@ if (empty($_ENV['SMTP_PASSWORD'])) {
     exit;
 }
 
-// Temporary debug - show what's being loaded (remove after testing)
-echo json_encode(['debug' => [
-    'SMTP_HOST' => $_ENV['SMTP_HOST'] ?? 'NOT SET',
-    'SMTP_USERNAME' => $_ENV['SMTP_USERNAME'] ?? 'NOT SET', 
-    'SMTP_PORT' => $_ENV['SMTP_PORT'] ?? 'NOT SET',
-    'PASSWORD_LENGTH' => strlen($_ENV['SMTP_PASSWORD'] ?? '')
-]]);
-exit;
 
 $mail = new PHPMailer(true);
 
@@ -89,7 +81,7 @@ try {
     $mail->SMTPAuth   = true;
     $mail->Username   = $_ENV['SMTP_USERNAME'];
     $mail->Password   = $_ENV['SMTP_PASSWORD'];
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = $_ENV['SMTP_PORT'];
 
     // Recipients
