@@ -71,7 +71,7 @@ $mail = new PHPMailer(true);
 try {
     // Server settings - Using Hostinger SMTP
     $mail->isSMTP();
-    $mail->Host       = 'mail.laundry24orlando.com';
+    $mail->Host       = 'smtp.hostinger.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'info@laundry24orlando.com';  // You'll need to create this email in Hostinger
     $mail->Password   = $_ENV['SMTP_PASSWORD'] ?? getenv('SMTP_PASSWORD');    
