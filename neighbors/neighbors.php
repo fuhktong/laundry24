@@ -4,10 +4,14 @@
     </div>
     <div class="neighbors-images">
         <div class="neighbor-item">
-            <img src="images/bronxpizza.png" alt="Bronx Pizza">
+            <a href="https://thebronxpizza.com/" target="_blank">
+                <img src="images/bronxpizza.png" alt="Bronx Pizza">
+            </a>
         </div>
         <div class="neighbor-item">
-            <img src="images/luxurybarber.png" alt="Luxury Barber">
+            <a href="https://luxurybarbershopstudio.com/" target="_blank">
+                <img src="images/luxurybarber.png" alt="Luxury Barber">
+            </a>
         </div>
     </div>
 </div>
