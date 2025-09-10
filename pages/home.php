@@ -3,8 +3,8 @@
         <h2>Laundry 24 Orlando</h2>
         <h1>
             Laundromat in Orlando, FL<br>
-            All New Machines | Free Wi-Fi
-            ***Soft opening, while we work out the kinks***
+            All New Machines | Free Wi-Fi<br>
+            ***Soft opening, while we work out the kinks***<br>
             This laundry is card driven. The card is purchased via cash, CC, Apple Pay, etc
         </h1>
         <button class="mainpic-button" onclick="window.location.href='index.php?page=contact'">
