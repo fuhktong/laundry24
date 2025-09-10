@@ -140,3 +140,9 @@
   flex: 1;
   text-align: center;
 }
+
+@media (max-width: 480px) {
+  .home-mainpic-section-text h1 {
+    font-size: 18px;
+  }
+}
