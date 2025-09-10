@@ -42,9 +42,9 @@
 
 <!-- </div> -->
 
-<!-- <div id="carousel-container"> -->
+<div id="carousel-container"> -->
     <!-- Carousel will be inserted here by JavaScript -->
-<!-- </div> -->
+</div>
 
 <!-- 
 <div class="laundroworks-text-section home-laundroworks">
@@ -72,4 +72,4 @@
     </div>
 </div> -->
 
-<!-- <?php include 'footer/footer-contact.php'; ?> -->
+<?php include 'footer/footer-contact.php'; ?>
