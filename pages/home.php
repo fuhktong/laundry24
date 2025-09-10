@@ -1,19 +1,17 @@
 <section class="home-mainpic-section home-homepic">
     <div class="home-mainpic-section-text">
         <h2>Laundry 24 Orlando</h2>
-        <h1>
-            Laundromat in Orlando, FL<br>
-            All New Machines | Free Wi-Fi<br>
-            ***Soft opening, while we work out the kinks***<br>
-            This laundry is card driven. The card is purchased via cash, CC, Apple Pay, etc
-        </h1>
-        <button class="mainpic-button" onclick="window.location.href='index.php?page=contact'">
+        <h1>Laundromat in Orlando, FL</h1>
+        <h1>All New Machines | Free Wi-Fi</h1>
+        <h1>***Soft opening, while we work out the kinks***</h1>
+        <h1>This laundry is card driven. The card is purchased via cash, CC, Apple Pay, etc.</h1>
+        <!-- <button class="mainpic-button" onclick="window.location.href='index.php?page=contact'">
             Visit Us
-        </button>
+        </button> -->
     </div>
 </section>
 
-<div class="text-section" style="padding-top: 50px; padding-bottom: 50px;">
+<!-- <div class="text-section" style="padding-top: 50px; padding-bottom: 50px;">
     <div class="text-section-layer">
         <h1>Do Your Laundry in a Clean & Air Conditioned Environment</h1>
         <p>
@@ -38,16 +36,17 @@
             loyalty program for our regular guests. Friendly, on-site attendants
             are always available to assist with anything you need—just ask!
         </p>
-    </div>
-    <?php include 'neighbors/neighbors.php'; ?>
+    </div> -->
 
-</div>
+    <!-- <?php include 'neighbors/neighbors.php'; ?> -->
 
-<div id="carousel-container">
+<!-- </div> -->
+
+<!-- <div id="carousel-container"> -->
     <!-- Carousel will be inserted here by JavaScript -->
-</div>
+<!-- </div> -->
 
-
+<!-- 
 <div class="laundroworks-text-section home-laundroworks">
     <div class="laundroworks-text-section-layer">
         <div class="home-laundroworks-layer">
@@ -71,6 +70,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
-<?php include 'footer/footer-contact.php'; ?>
+<!-- <?php include 'footer/footer-contact.php'; ?> -->

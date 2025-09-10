@@ -71,11 +71,11 @@ switch($page) {
 </head>
 <body>
     <div class="App">
-        <?php include 'header/header.php'; ?>
+        <!-- <?php include 'header/header.php'; ?> -->
         <main>
             <?php include $content; ?>
         </main>
-        <?php include 'footer/footer.php'; ?>
+        <!-- <?php include 'footer/footer.php'; ?> -->
     </div>
     <script src="carousel/carousel.js"></script>
     <script src="header/navbar.js"></script>
