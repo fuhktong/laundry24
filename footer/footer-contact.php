@@ -12,7 +12,7 @@
                 4528 Hoffner Ave<br>Orlando, FL 32812
             </a>
         </p>
-        <p>Behind the Library on Hoffner Avenue.</p>
+        <p>On Hoffner in the Conway Circle across the street from Publix</p>
         <p>
             Enter "Laundry 24 Orlando" into Waze or Google Maps to search for our location
         </p>
@@ -20,10 +20,10 @@
     <div class="text-contact-info">
         <h1>Contact Us</h1>
         <p>
-            <a href="tel:+14072379531">(407) 237-9531</a>
+            <a href="tel:+14072379531">(689) 306-3040</a>
         </p>
         <p>
-            <a href="mailto:advancecoin47@gmail.com">advancecoin47@gmail.com</a>
+            <a href="mailto:advancecoin47@gmail.com">advancecoinmanager@gmail.com</a>
         </p>
     </div>
 </div>
