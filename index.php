@@ -19,7 +19,7 @@ switch($page) {
         $content = 'contact/contact.php';
         break;
     default:
-        $title = 'Advance Coin Laundry - Orlando, Florida Laundrymat';
+        $title = 'Laundry 24 Orlando - Orlando, Florida Laundrymat';
         $content = 'pages/home.php';
         break;
 }
@@ -30,12 +30,12 @@ switch($page) {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title><?php echo htmlspecialchars($title); ?></title>
-    <meta name="description" content="Advance Coin Laundry offers coin-operated washers and dryers, wash & fold services, and dry cleaning services in Orlando, FL." />
+    <meta name="description" content="Laundry 24 Orlando offers coin-operated washers and dryers, wash & fold services, and dry cleaning services in Orlando, FL." />
     <meta name="keywords" content="laundry, laundromat, Orlando, Florida, coin-operated, wash and fold, dry cleaning" />
-    <meta name="author" content="Advance Coin Laundry" />
+    <meta name="author" content="Laundry 24 Orlando" />
     <meta name="robots" content="index, follow" />
     <meta property="og:title" content="<?php echo htmlspecialchars($title); ?>" />
-    <meta property="og:description" content="Advance Coin Laundry offers coin-operated washers and dryers, wash & fold services, and dry cleaning services in Orlando, FL." />
+    <meta property="og:description" content="Laundry 24 Orlando offers coin-operated washers and dryers, wash & fold services, and dry cleaning services in Orlando, FL." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="images/favicon.ico" />

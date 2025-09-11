@@ -23,7 +23,7 @@
             <a href="tel:+14072379531">(689) 306-3040</a>
         </p>
         <p>
-            <a href="mailto:advancecoin47@gmail.com">advancecoinmanager@gmail.com</a>
+            <a href="mailto:advancecoinmanager@gmail.com">advancecoinmanager@gmail.com</a>
         </p>
     </div>
 </div>
